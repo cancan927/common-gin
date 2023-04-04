@@ -1,0 +1,31 @@
+mode:
+  dev: true
+
+server:
+  name: "my_server"
+  port: 8080
+
+
+datasource:
+  driverName: "mysql"
+  host: 127.0.0.1
+  port: 3306
+  database: "test"
+  username: "root"
+  password: "root"
+  charset: utf8
+
+redis:
+  url: localhost:6379
+  db: 0
+
+
+log:
+  MaxSize: 1          #日志文件的最大尺寸（MB），超限后自动分割
+  MaxBackups: 10      #保留旧文件的最大个数
+  MaxAge: 30          #保留旧文件的最大天数
+
+
+jwt:
+  tokenExpire: 30     #token有效时长（分钟）
+  signKey: cancan.com #签名使用的key
