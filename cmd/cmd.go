@@ -3,6 +3,7 @@ package cmd
 import (
 	"github.com/cancan927/common-gin/config"
 	"github.com/cancan927/common-gin/global"
+	"github.com/cancan927/common-gin/router"
 )
 
 // Start 开启一个web服务
@@ -33,5 +34,5 @@ func Start() {
 
 	//====================================================================
 	// = 初始化路由
-
+	router.InitRouter()
 }
