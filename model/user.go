@@ -1,7 +1,5 @@
 package model
 
-import "gorm.io/gorm"
-
 type User struct {
 	Id       int
 	NickName string `json:"nickname"  gorm:"column:nickname"`
@@ -15,6 +13,6 @@ func (User) TableName() string {
 	return "user"
 }
 
-func (u *User) BeforeCreate(orm *gorm.DB) {
-
-}
+//func (u *User) BeforeCreate(orm *gorm.DB) {
+//
+//}
