@@ -13,7 +13,7 @@ func InitUserRouters() {
 		public := rgPublic.Group("")
 		{
 			public.POST("/register", v1.UserRegisterHandler)
-			//public.GET("/login", v1.UserLoginHandler)
+			public.GET("/login", v1.UserLoginHandler)
 		}
 
 		//需要鉴权的user分组
