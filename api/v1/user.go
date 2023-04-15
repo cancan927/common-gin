@@ -4,6 +4,7 @@ import (
 	"github.com/cancan927/common-gin/serializer"
 	"github.com/cancan927/common-gin/service"
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func UserRegisterHandler(c *gin.Context) {
@@ -22,21 +23,21 @@ func UserRegisterHandler(c *gin.Context) {
 	}
 }
 
-//func UserLoginHandler(c *gin.Context) {
-//	var s service.UserLoginService
-//	if err := c.ShouldBindJSON(&s); err != nil {
-//		c.JSON(http.StatusOK, serializer.Response{
-//			Code: 40005,
-//			Msg:  err.Error(),
-//			Data: nil,
-//		})
-//		return
-//	} else {
-//		res := s.Login(c)
-//		c.JSON(http.StatusOK, res)
-//		return
-//	}
-//}
+func UserLoginHandler(c *gin.Context) {
+	var s service.UserLoginService
+	if err := c.ShouldBindJSON(&s); err != nil {
+		c.JSON(http.StatusOK, serializer.Response{
+			Code: 40005,
+			Msg:  err.Error(),
+			Data: nil,
+		})
+		return
+	} else {
+		res := s.Login(c)
+		c.JSON(http.StatusOK, res)
+		return
+	}
+}
 
 //func UserInfoByIdHandler(c *gin.Context) {
 //	//id := c.Query("id")
